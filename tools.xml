@@ -1,0 +1,12 @@
+<tools>
+	<tool id="bowtie" name="Bowtie" category="Mapping" contributors='Qomo team'>
+		<command>perl build.pl -opt "#{opt}" -db #{db} -input #{qry} -QOMO_COMMON #{QOMO_COMMON} -HADOOP_BIN #{HADOOP_BIN} -STREAMING_JAR #{STREAMING_JAR} -QOMO_COMMON #{QOMO_COMMON} -qry #{qry} -out #{out}</command>
+
+		<params>
+			<input format="jar" name="db" label="Index" />
+			<input format="fasta,fastq" name="qry" label="Reads" />
+			<string name="opt" label="Options" optional="true" value="--sam --sam-nohead"/>
+			<output format="csv" name="out" label="Output" />
+		</params>
+	</tool>
+</tools>
